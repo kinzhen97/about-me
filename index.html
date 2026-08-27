@@ -2,32 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>KZ - About Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KZ — About Me</title>
   <style>
-    body { background: #0f0f0f; color: #e8e8e8; font-family: sans-serif; padding: 2rem; max-width: 680px; margin: 0 auto; }
-    h1 { font-size: 1.6rem; }
-    h2 { font-size: 0.8rem; text-transform: uppercase; color: #888; letter-spacing: 0.1em; margin: 1.5rem 0 0.5rem; }
-    p { color: #ccc; line-height: 1.7; font-size: 0.95rem; }
-    .chip { display: inline-block; background: #222; border: 1px solid #2a2a2a; border-radius: 6px; padding: 0.3rem 0.75rem; font-size: 0.82rem; margin: 0.25rem; }
+    :root { --bg:#0f0f0f;--card:#1a1a1a;--border:#2a2a2a;--text:#e8e8e8;--muted:#888;--accent:#6ee7b7;--accent2:#818cf8;--warn:#fbbf24; }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;padding:2rem 1rem;}
+    .page{max-width:680px;margin:0 auto;}
+    .header{display:flex;align-items:center;gap:1.5rem;margin-bottom:2rem;}
+    .avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;}
+    .header-text h1{font-size:1.6rem;font-weight:700;letter-spacing:-0.02em;}
+    .header-text p{color:var(--muted);font-size:0.9rem;margin-top:0.2rem;}
+    .tag{display:inline-block;background:rgba(110,231,183,0.1);color:var(--accent);font-size:0.72rem;padding:0.2rem 0.6rem;border-radius:99px;border:1px solid rgba(110,231,183,0.2);margin-top:0.5rem;}
+    .section{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.4rem;margin-bottom:1rem;}
+    .section-title{font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.9rem;}
+    .bio p{font-size:0.95rem;line-height:1.7;color:#ccc;}.bio p+p{margin-top:0.7rem;}
+    .chips{display:flex;flex-wrap:wrap;gap:0.5rem;}
+    .chip{background:#222;border:1px solid var(--border);border-radius:6px;padding:0.3rem 0.75rem;font-size:0.82rem;color:#ccc;}
+    .chip.hi{border-color:rgba(110,231,183,0.3);color:var(--accent);}
+    .chip.lo{border-color:rgba(129,140,248,0.3);color:var(--accent2);}
+    .timeline{display:flex;flex-direction:column;gap:1.1rem;}
+    .tl-item{display:flex;gap:1rem;}
+    .tl-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:0.45rem;flex-shrink:0;}
+    .tl-content h3{font-size:0.92rem;font-weight:600;}
+    .tl-content .tl-meta{font-size:0.78rem;color:var(--muted);margin-top:0.15rem;}
+    .tl-content p{font-size:0.83rem;color:#aaa;margin-top:0.3rem;line-height:1.5;}
+    .facts{display:flex;flex-direction:column;gap:0.5rem;}
+    .fact{display:flex;align-items:flex-start;gap:0.6rem;font-size:0.87rem;color:#ccc;line-height:1.5;}
+    .fact-icon{font-size:1rem;flex-shrink:0;}
+    .links{display:flex;gap:0.75rem;flex-wrap:wrap;}
+    .link-btn{display:inline-flex;align-items:center;gap:0.4rem;background:#222;border:1px solid var(--border);border-radius:8px;padding:0.45rem 1rem;font-size:0.83rem;color:#ccc;text-decoration:none;transition:all 0.15s;}
+    .link-btn:hover{border-color:var(--accent);color:var(--accent);}
+    .footer{text-align:center;margin-top:2rem;font-size:0.75rem;color:#444;}
+    .easter{display:none;background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.2);border-radius:8px;padding:0.7rem 1rem;font-size:0.83rem;color:var(--warn);margin-top:0.8rem;}
+    .konami-hint{font-size:0.7rem;color:#333;text-align:center;margin-top:0.5rem;cursor:default;user-select:none;}
   </style>
 </head>
 <body>
-  <h1>Tan Kin Zhen (KZ)</h1>
-  <p>Full Stack Dev · 6 years exp · KL, Malaysia</p>
-
-  <h2>About</h2>
-  <p>Hey I am KZ. I build web apps with Java and Vue.js. Currently at Mercedes-Benz Malaysia as a Security Champion.</p>
-
-  <h2>Experince</h2>
-  <p>Mercedes-Benz Malaysia (2024-now), Nexify Limited (2022-2024), Theta Service Partner (2019-2022)</p>
-
-  <h2>Skills</h2>
-  <span class="chip">Java</span>
-  <span class="chip">Vue.js</span>
-  <span class="chip">TypeScript</span>
-  <span class="chip">Spring Boot</span>
-  <span class="chip">PostgreSQL</span>
-  <span class="chip">AWS</span>
-
+  <div class="page">
+    <div class="header">
+      <div class="avatar">👨‍💻</div>
+      <div class="header-text">
+        <h1>Tan Kin Zhen (KZ)</h1>
+        <p>Full Stack Developer · Kuala Lumpur, Malaysia</p>
+        <span class="tag">Open to new roles</span>
+      </div>
+    </div>
+    <div class="section bio">
+      <div class="section-title">About</div>
+      <p>Hey! I'm KZ — a full stack dev with 7 years of experience who somehow ended up as a <strong>Security Champion</strong> at Mercedes-Benz. My day job is building enterprise web apps with Vue.js and Java/Spring Boot, but I also spend an embarrassing amount of time making things look cool with CSS.</p>
+      <p>I'm big on AI-assisted development — I use GitHub Copilot, Claude, Devin, and Windsurf daily. At this point my rubber duck is just an AI. I hold a <strong>Purple Belt in application security</strong>, which sounds much cooler than it is (it's not a martial arts thing, unfortunately).</p>
+      <p>Currently looking for a hybrid/remote role in KL or Selangor where I can ship real stuff, work with good people, and not sit in traffic for 2 hours a day.</p>
+    </div>
+    <div class="section">
+      <div class="section-title">Tech Stack</div>
+      <div class="chips">
+        <span class="chip hi">Java</span><span class="chip hi">Spring Boot</span><span class="chip hi">TypeScript</span><span class="chip hi">Vue.js</span><span class="chip hi">Angular</span><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">AWS S3</span><span class="chip">AWS RDS</span><span class="chip">Datadog</span><span class="chip lo">GitHub Copilot</span><span class="chip lo">Claude</span><span class="chip lo">Devin</span><span class="chip lo">Windsurf</span>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">Experience</div>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h3>Full Stack Developer — Mercedes-Benz Malaysia</h3><div class="tl-meta">Jul 2024 – Present · Hybrid, KL</div><p>Building enterprise web apps, managing AWS infra, security-championing, and wrangling Datadog alerts at 2am.</p></div></div>
+        <div class="tl-item"><div class="tl-dot" style="background:var(--accent2)"></div><div class="tl-content"><h3>Java Consultant — Nexify Limited</h3><div class="tl-meta">May 2022 – Jun 2024 · KL</div><p>Digitised Hong Kong Police Force services with Angular + Java. Cross-timezone meetings at 9am were... character building.</p></div></div>
+        <div class="tl-item"><div class="tl-dot" style="background:#555"></div><div class="tl-content"><h3>Software Engineer — Theta Service Partner</h3><div class="tl-meta">Feb 2019 – Feb 2022 · KL</div><p>Full Agile SDLC, JBOSS deployments, cross-squad communication. Where I learned that "it works on my machine" is not a deployment strategy.</p></div></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">Certs & Achievements</div>
+      <div class="chips"><span class="chip hi">AWS Certified Developer Associate</span><span class="chip hi">Security Purple Belt</span><span class="chip hi">Security Champions — Mercedes-Benz</span><span class="chip">Agile Scrum Developer</span></div>
+    </div>
+    <div class="section">
+      <div class="section-title">Fun Facts</div>
+      <div class="facts">
+        <div class="fact"><span class="fact-icon">☕</span><span>Runs on coffee and Stack Overflow. Mostly Stack Overflow.</span></div>
+        <div class="fact"><span class="fact-icon">🔐</span><span>Security Champion who still reuses passwords on personal accounts. Don't tell my team.</span></div>
+        <div class="fact"><span class="fact-icon">🤖</span><span>My AI tools have written more code than I have this year. I prefer "AI orchestrator" on my resume.</span></div>
+        <div class="fact"><span class="fact-icon">🚗</span><span>Works at Mercedes-Benz but takes the LRT to work.</span></div>
+        <div class="fact"><span class="fact-icon">📍</span><span>Based near Batu Caves — yes, there are monkeys on my commute.</span></div>
+      </div>
+      <div class="easter" id="easter">🎉 you found it. here's a secret: i googled how to center a div last week.</div>
+    </div>
+    <div class="section">
+      <div class="section-title">Find Me</div>
+      <div class="links">
+        <a class="link-btn" href="https://linkedin.com/in/tan-kin-zhen-087508173" target="_blank">LinkedIn</a>
+        <a class="link-btn" href="https://github.com/kinzhen97" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <p class="konami-hint">↑ ↑ ↓ ↓ ← → ← → B A</p>
+    <div class="footer">made with html, css, and mild caffeine dependency · kz 2026</div>
+  </div>
+  <script>
+    const KONAMI=["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];
+    let idx=0;
+    document.addEventListener("keydown",e=>{
+      if(e.key===KONAMI[idx]){idx++;if(idx===KONAMI.length){document.getElementById("easter").style.display="block";idx=0;}}
+      else{idx=e.key===KONAMI[0]?1:0;}
+    });
+  </script>
 </body>
 </html>
